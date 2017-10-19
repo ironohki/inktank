@@ -1,0 +1,37 @@
+* {
+  font-family: tahoma, san-serif;
+}
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 2.6rem;
+  margin-bottom: 1.0rem;
+}
+h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1.4rem;
+}
+h4 {
+  font-size: 2.0rem;
+}
+p {
+  font-size: 1.8rem;
+  letter-spacing: .1rem;
+  word-spacing: .5rem;
+  line-height: 2.2rem;
+  margin-bottom: 2rem;
+}
+a {
+  transition: color .3s;
+  color: $black;
+  transition: color .3s, border .3s;
+  border-bottom: 0px solid $white;
+  &:hover {
+    color: $si_purple;
+    border-bottom: 5px solid $si_purple;
+  }
+}
+ol {
+  margin-left: 2.2rem;
+}

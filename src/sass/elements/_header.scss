@@ -1,0 +1,41 @@
+header {
+  padding: 1rem 0;
+  margin: 0 4rem 1rem;
+  border-bottom: 3px solid $black;
+}
+
+header nav {
+  padding: 0;
+  font-size: 1.8rem;
+  ul {
+    list-style: none;
+  }
+  li {
+    display: inline-block;
+    padding: 0.4rem 1.1rem 0.4rem 0.5rem;
+  }
+  a {
+    font-weight: bold;
+    text-decoration: none;
+    transition: color .3s, border .3s;
+    border-bottom: 0px solid $white;
+    &:hover {
+      color: $si_purple;
+      border-bottom: 5px solid $si_purple;
+    }
+  }
+}
+
+.header__logo {
+  img {
+      height: 10rem;
+  }
+  float: left;
+  margin-right: 1rem;
+}
+.header__title {
+  padding-top: 1.4rem;
+  font-size: 4rem;
+  font-weight: bold;
+  color: $black;
+}

@@ -1,0 +1,63 @@
+.blog {
+  @include clearfix;
+}
+.entry {
+  @include grid_col("md", 9, "min");
+}
+.sidenav {
+  @include grid_col("md", 3, "min");
+  font-size: 1.4rem;
+  padding-top: 1rem;
+  ul {
+    list-style: none;
+  }
+  li {
+    margin-bottom: 0.8rem;
+  }
+  a {
+    text-decoration: none;
+    display: block;
+  }
+  .blog__date {
+    font-size: 1.0rem;
+    font-style: italic;
+    color: $gray-9;
+    display: block;
+  }
+  .blog__title {
+    font-size: 1.6rem;
+  }
+}
+
+.entries {
+  ul {
+    list-style: none;
+  }
+  li {
+    margin-bottom: 2rem;
+    @include grid_col("md", 4, "min");
+    a {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column-reverse;
+      border: 2px solid $si_purple;
+      height: 20rem;
+      font-size: 2rem;
+      text-decoration: none;
+      transition: background-color .3s;
+
+      &:hover {
+        background-color: $black-10;
+      }
+    }
+    .blog__date {
+      font-size: 1.4rem;
+      font-style: italic;
+      color: $gray-9;
+      order: 2;
+    }
+    .blog__title {
+      font-size: 2.2rem;
+    }
+  }
+}

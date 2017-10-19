@@ -1,0 +1,73 @@
+// Button Reset
+@mixin buttonReset {
+  align-items: flex-start;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  font-stretch: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  letter-spacing: normal;
+  line-height: normal;
+  list-style-type: decimal;
+  text-decoration: none;
+  text-indent: 0px;
+  text-rendering: auto;
+  text-shadow: none;
+  text-transform: none;
+  vertical-align: baseline;
+  word-spacing: 0px;
+  writing-mode: horizontal-tb;
+  -webkit-appearance: none;
+}
+
+// Clearfix
+@mixin clearfix {
+  &:after { 
+    content: ""; 
+    display: block;
+    height: 0;
+    clear: both;
+  }
+}
+
+// Grid
+@mixin breakpoint($break,$minmax,$heightwidth) {
+  @media (#{$minmax}-#{$heightwidth}: map-get($grid,$break)) { 
+    @content; 
+  }
+}
+
+@mixin grid_row(){
+    @include clearfix;
+}
+
+@mixin grid_col($break, $size, $minmax){
+    $col: 100% / 12;
+    $margin: $grid-margin * (12-$size) / 12;
+    $width: $col * $size - $margin;
+
+    display: block;
+    float: left;
+    margin-right: $grid-margin;
+    width: 100%;
+
+    -webkit-box-sizing:border-box; 
+    -moz-box-sizing:border-box; 
+    box-sizing:border-box;
+
+    &:last-child {
+        margin-right:0%;
+    }
+
+    @include breakpoint($break,$minmax,'width') { 
+        width: $width;
+    }
+}
+
+@mixin sicaga_hr() {
+    display: block;
+    height: 20px;
+    background: url(../img/bg-hr.png);
+    content: "";
+}

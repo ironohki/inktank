@@ -1,0 +1,6 @@
+.entry {
+  @include grid_col("md", 9, "min");
+}
+.sidenav {
+  @include grid_col("md", 3, "min");
+}

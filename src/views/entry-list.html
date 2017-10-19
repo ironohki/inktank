@@ -1,0 +1,6 @@
+  <li ng-repeat="blog in blogs" >
+    <a href="/#/blog/{{ blog['Post Date'] }}/">
+      <span class="blog__date">{{ blog['Post Date'] }}</span>
+      <span class="blog__title">{{ blog['Title'] }}</span>
+    </a>
+  </li>
