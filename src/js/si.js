@@ -24,11 +24,11 @@ siApp.config(function($routeProvider,$locationProvider) {
       })
       .when('/speakeasy/artists/', {
           templateUrl : 'views/speakeasy_artists.html',
-          pageState : "artists"
+          pageState : "speakeasy"
       })
       .when('/speakeasy/faq/', {
           templateUrl : 'views/speakeasy_faq.html',
-          pageState : "faq"
+          pageState : "speakeasy"
       })
       ;
     $locationProvider.hashPrefix('');
