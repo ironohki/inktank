@@ -6,30 +6,37 @@ var siApiBlog    = siApiURL + 'inktankblog/index.json';
 siApp.config(function($routeProvider,$locationProvider) {
     $routeProvider
       .when('/', {
-          templateUrl : 'views/home.html'
+          templateUrl : 'views/home.html',
+          pageState : "home"
       })
       .when('/blog/', {
-          templateUrl : 'views/blog.html'
+          templateUrl : 'views/blog.html',
+          pageState : "blog"
       })
       .when('/blog/:date/', {
           templateUrl : 'views/entry.html',
-          controller : 'blogsController'
+          controller : 'blogsController',
+          pageState : "blog"
       })
       .when('/speakeasy/', {
-          templateUrl : 'views/speakeasy.html'
+          templateUrl : 'views/speakeasy.html',
+          pageState : "speakeasy"
       })
       .when('/speakeasy/artists/', {
-          templateUrl : 'views/speakeasy_artists.html'
+          templateUrl : 'views/speakeasy_artists.html',
+          pageState : "artists"
       })
       .when('/speakeasy/faq/', {
-          templateUrl : 'views/speakeasy_faq.html'
+          templateUrl : 'views/speakeasy_faq.html',
+          pageState : "faq"
       })
       ;
     $locationProvider.hashPrefix('');
 });
 
 
-siApp.controller('siInit', ['$scope','$http','$routeParams', function($scope,$http,$routeParams) {
+siApp.controller('siInit', ['$scope','$http','$route','$routeParams', 
+  function($scope,$http,$route,$routeParams) {
   $scope.blogs = {};
 
   // get the site content
@@ -45,6 +52,11 @@ siApp.controller('siInit', ['$scope','$http','$routeParams', function($scope,$ht
     $scope.speakeasy_artists = _.find(dataObj, ['Name', 'Speakeasy Artists']);
   }, function errorCallback(response) {
       console.log('API Error!');
+  });
+
+  // events on location change
+  $scope.$on('$locationChangeSuccess',function(){
+    $scope.pageClass = $route.current.$$route.pageState;
   });
 
   // get the blog entries
