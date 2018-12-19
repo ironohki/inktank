@@ -47,7 +47,6 @@ siApp.controller('siInit', ['$scope','$http','$route','$routeParams',
     var dataObj = response.data['Website Content'];
     $scope.home = _.find(dataObj, ['Name', 'Home']);
     $scope.speakeasy = _.find(dataObj, ['Name', 'Speakeasy']);
-    console.log($scope.speakeasy);
     $scope.speakeasy_faq = _.find(dataObj, ['Name', 'Speakeasy FAQ']);
     $scope.speakeasy_artists = _.find(dataObj, ['Name', 'Speakeasy Artists']);
   }, function errorCallback(response) {
